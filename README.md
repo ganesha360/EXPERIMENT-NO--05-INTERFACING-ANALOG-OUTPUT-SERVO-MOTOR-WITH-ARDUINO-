@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 14/03/2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: GANESH R 
+###  ROLL NO : 212222240029
+###  DEPARTMENT: AI&ML
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -74,7 +74,41 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```PYTHON
+// C++ code
+//
+
+#include<Servo.h>
+Servo s1;
+
+int pos = 0;
+
+void setup()
+{
+  s1.attach(9);
+  Serial.begin(9600);
+  
+}
+
+void loop()
+{
+  for(pos=0;pos<=180;pos++){
+    s1.write(pos);
+    delay(20); //milliseconds
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    //delay(500);
+  }
+  for(pos=180;pos>=0;pos--){
+    s1.write(pos);
+    delay(20); //milliseconds
+    //Serial.print("Angle=");
+    Serial.println(pos);
+    //delay(500);
+  }
+  
+}
+```
 
 
 
